@@ -1,0 +1,20 @@
+<article>
+  <h1><%= todo_list.title %></h1>
+  <p><%= todo_list.description %></p>
+  <% if todo_list.todo_items.any? %>
+    <!-- <ul> -->
+    <tr>
+          
+      <% todo_list.todo_items.each do |item| %>
+        <td>
+          <%= item.content %>
+          
+        </td>
+      <% end %>
+    </tr>
+
+    <!-- </ul> -->
+  <% else %>
+    <p>This list contains no items.</p>
+  <% end %>
+</article>

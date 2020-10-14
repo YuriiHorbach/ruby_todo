@@ -13,13 +13,14 @@
         </thead>
         <tbody>
           <% @todo_lists.each do |todo_list| %>
-            <tr>
-              <td><%= todo_list.title %></td>
-              <td><%= link_to 'Show', todo_list %></td>
-              <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-              <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
+              <tr>
+                <td><%= todo_list.title %></td>
+                <td><%= link_to 'Show', todo_list %></td>
+                <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
+                <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
           <% end %>
+          <%= render(@todo_lists) || content_tag("p", "There are no todo lists.") %>
         </tbody>
       </table>
     </div>
